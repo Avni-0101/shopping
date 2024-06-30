@@ -1,38 +1,178 @@
+/* src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  text-align: center;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.new {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 20px;
+}
+
+.new input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.new button.add {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #28a745;
   color: white;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+.new button.add:hover {
+  background-color: #218838;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.list li:last-child {
+  border-bottom: none;
+}
+
+.list button.remove {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.list button.remove:hover {
+  background-color: #c82333;
+}
+
+.list button.clear {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #ffc107;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.list button.clear:hover {
+  background-color: #e0a800;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App {
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .new input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .new button.add {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .list li {
+    padding: 8px;
+  }
+
+  .list button.remove {
+    padding: 4px 6px;
+    font-size: 14px;
+  }
+
+  .list button.clear {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    margin: 10px auto;
+    padding: 15px;
+    width: 95%;
+  }
+
+  .header {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .new {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .new input {
+    margin-right: 0;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .new button.add {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .list button.remove {
+    align-self: flex-end;
+    margin-top: 10px;
+  }
+
+  .list button.clear {
+    padding: 10px;
+    font-size: 14px;
   }
 }
